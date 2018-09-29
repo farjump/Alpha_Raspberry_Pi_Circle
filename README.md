@@ -33,7 +33,10 @@ Copy at the root filesystem of the sdcard at the same level as bootcode.bin the 
 
 ## using Alpha
 
-Clone [Circle] then copy load.gdb and armv6-core.xml file in sample directory of [Circle]
+Clone [Circle] then copy load.gdb and armv6-core.xml file in sample directory of [Circle].
+
+The load.gdb should be modify for the uart used at this line: "target remote /dev/ttyUSB0"
+It depends on the tty name of the usb converter.
 
 It is recommanded to recompile Circle with a moderate level of optimization like -O1 or -Og or -O0 to ease debugging.
 

@@ -23,37 +23,33 @@ version of the Raspberry Pi and can be used to debug Circle Software.
 
 ## setup Raspberry
 
-Connect an serial to usb converter to Rapsberry Pin 8, 10
-and pin 6 for ground
+Connect an serial to usb converter to Rapsberry Pin 8, 10 and Pin 6 for ground.
 
 ## installing Alpha on rpi SDCARD.
 
-Copy at the root filesystem of the sdcard at the same level as
-bootcode.bin the two files :
-config.txt and
-Alpha.bin taken in the directory of your RPI model
+Copy at the root filesystem of the sdcard at the same level as bootcode.bin the two files :
+* config.txt and
+* Alpha.bin taken in the directory of your RPI model
 
 ## using Alpha
 
-Clone [Circle] then copy load.gdb and armv6-core.xml file in
-sample directory of [Circle]
+Clone [Circle] then copy load.gdb and armv6-core.xml file in sample directory of [Circle]
 
-It is recommanded to recompile Circle with a reasonable level of
-optimization like -O1 or -Og or -O0 to ease debugging.
+It is recommanded to recompile Circle with a moderate level of optimization like -O1 or -Og or -O0 to ease debugging.
 
-Then go to sample directory and launch command 
+Then go to sample directory and launch command :
+
 arm-none-eabi-gdb --nx 12-pwmsound/kernel.elf  --ex "so load.gdb"
 
 And DEBUG your software.
 
-It can also be interesting to add a cmdline.txt at root of the sdcard
-with "logdev=ttyS1".
+It can also be interesting to add a cmdline.txt at root of the sdcard with "logdev=ttyS1".
 In this case Circle should use Raspberry Pi Uart to log info.
 But because of Alpha, the log will be redirect to gdb console.
 
 # Support
 
-Support is provided through this repository's [issue board](https://github.com/farjump/raspberry-pi/issues).
+Support is provided through this repository's [issue board](https://github.com/farjump/Alpha_Raspberry_Pi_Circle/issues).
 Feel free to also [contact us][contact-us].
 
 

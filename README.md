@@ -45,12 +45,12 @@ Then go to sample directory and launch command :
 arm-none-eabi-gdb --nx 12-pwmsound/kernel.elf  --ex "so load.gdb"
 
 The load.gdb file to use depend on your Circle github tag.
-Circle tag STEP41.2 to STEP48 : use load_STEP41.2_to_STEP48.gdb file (also try to use this one for earlier tag)
-Circle tag STEP38 to STEP41.1 : use load_STEP38_to_STEP41.1.gdb file
-Circle tag STEP37 and before  : use load_until_STEP37.gdb file (for very early Tag it may not work)
 
-eg: for circle STEP38 tag use command: 
-arm-none-eabi-gdb --nx 12-pwmsound/kernel.elf  --ex "so load_STEP41.2_to_STEP48.gdb" 
+* Circle tag STEP41.2 to STEP48 : use load_STEP41.2_to_STEP48.gdb file (also try to use this one for earlier tag)
+* Circle tag STEP38 to STEP41.1 : use load_STEP38_to_STEP41.1.gdb file
+* Circle tag STEP37 and before  : use load_until_STEP37.gdb file (for very early tag it may not work)
+
+eg: for circle STEP48 tag use command: arm-none-eabi-gdb --nx 12-pwmsound/kernel.elf  --ex "so load_STEP41.2_to_STEP48.gdb" 
 
 And DEBUG your software.
 
